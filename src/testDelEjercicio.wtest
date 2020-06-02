@@ -59,7 +59,6 @@ test "test de pedidos1"{
 	assert.that(pedido.autoSatisfacePedido(cachito))
 	pedido.agregarColorIncompatible(rojo)
 	assert.notThat(pedido.autoSatisfacePedido(cachito))
-	
 }
 test "test de pedidos2"{
 	const cachito = new ChevroletCorsa(color=rojo)
@@ -71,7 +70,6 @@ test "test de pedidos2"{
 	assert.that(pedido.autoSatisfacePedido(cachito))
 	pedido.cantPasajeros(6)
 	assert.notThat(pedido.autoSatisfacePedido(cachito))
-	
 }
 test "test de pedidos3"{
 	const cachito = new ChevroletCorsa(color=rojo)
@@ -84,5 +82,4 @@ test "test de pedidos3"{
 	pedido.acelerar()
 	pedido.acelerar()
 	assert.notThat(pedido.autoSatisfacePedido(cachito))
-	
 }

@@ -54,6 +54,14 @@ class Dependencia {
 	method totalPasajerosPedidos(){
 		return pedidosReg.sum({ped=>ped.cantPasajeros()})
 	}
-	method pedidosNoSatisfechos(){}
-	method todosPedidosColorIncomp(color){}
+	method pedidosNoSatisfechos(){
+		return flotaDeRodados.filter({
+			rod=> not pedidosReg.any({
+				ped=>ped.autoSatisfacePedido(rod)
+			})
+		})
+	}
+	method todosPedidosColorIncomp(color){
+		return pedidosReg.all({ped=>ped.tieneColorIncompatible(color)})
+	}
 }
