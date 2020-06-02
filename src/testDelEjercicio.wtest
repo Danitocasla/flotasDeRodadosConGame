@@ -2,6 +2,7 @@ import trafic.*
 import dependencia.*
 import rodados.*
 import colores.*
+import pedidos.*
 
 test "test dependencias" {
 	const deportes = new Dependencia(cantEmpleados=45)
@@ -47,4 +48,41 @@ test "test dependencias" {
 	assert.equals(rojo, cultura.colorDelRodadoMasRapido())//el color del rodado mas rapido
 	assert.notThat(cultura.esGrande())//si es grante o no
 	assert.equals(5, cultura.capacidadFaltante())//capacidad faltante
+}
+test "test de pedidos1"{
+	const cachito = new ChevroletCorsa(color=rojo)
+	const pedido = new Pedidos(
+		distancia=960, tiempoMax=8,cantPasajeros=4
+	)
+	pedido.agregarColorIncompatible(azul)
+	
+	assert.that(pedido.autoSatisfacePedido(cachito))
+	pedido.agregarColorIncompatible(rojo)
+	assert.notThat(pedido.autoSatisfacePedido(cachito))
+	
+}
+test "test de pedidos2"{
+	const cachito = new ChevroletCorsa(color=rojo)
+	const pedido = new Pedidos(
+		distancia=960, tiempoMax=8,cantPasajeros=4
+	)
+	pedido.agregarColorIncompatible(azul)
+	
+	assert.that(pedido.autoSatisfacePedido(cachito))
+	pedido.cantPasajeros(6)
+	assert.notThat(pedido.autoSatisfacePedido(cachito))
+	
+}
+test "test de pedidos3"{
+	const cachito = new ChevroletCorsa(color=rojo)
+	const pedido = new Pedidos(
+		distancia=960, tiempoMax=8,cantPasajeros=4
+	)
+	pedido.agregarColorIncompatible(azul)
+	
+	assert.that(pedido.autoSatisfacePedido(cachito))
+	pedido.acelerar()
+	pedido.acelerar()
+	assert.notThat(pedido.autoSatisfacePedido(cachito))
+	
 }

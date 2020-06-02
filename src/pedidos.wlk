@@ -7,6 +7,14 @@ class Pedidos {
 	method agregarColorIncompatible(nuevoColor){
 		coloresIncompatibles.add(nuevoColor)
 	}
-	method velocidadRequerida(){}
-	method autoSatisfacePedido(auto){}
+	method velocidadRequerida(){return distancia / tiempoMax}
+	method autoSatisfacePedido(auto){
+		return (auto.velocidadMaxima()-self.velocidadRequerida()) >= 10
+			and auto.capacidad()>=cantPasajeros
+				and not coloresIncompatibles.any({
+					col=>col == auto.color()
+				})
+	}
+	method acelerar(){tiempoMax -= 1}
+	method relajar(){tiempoMax += 1}
 }
