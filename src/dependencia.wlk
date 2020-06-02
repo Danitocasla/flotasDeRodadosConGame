@@ -1,11 +1,13 @@
 import rodados.*
 import trafic.*
 import colores.*
+import pedidos.*
 
 class Dependencia {
 	
-	var flotaDeRodados = []
+	var property flotaDeRodados = []
 	var property cantEmpleados
+	var property pedidos = []
 	
 	method agregarAFlota(rodado){
 		flotaDeRodados.add(rodado)
@@ -42,5 +44,11 @@ class Dependencia {
 	}
 	method esGrande(){
 		return cantEmpleados>=40 and flotaDeRodados.size()>=5
+	}
+	method agregarPedido(unPedido){
+		pedidos.add(unPedido)
+	}
+	method quitarPedido(unPedido){
+		pedidos.remove(unPedido)
 	}
 }
