@@ -1,17 +1,16 @@
 import colores.*
+import wollok.game.*
 
 class ChevroletCorsa {
 	var property color
+	var property position
+	var property image
 
-	method capacidad(){
-		return 4
-	}
-	method velocidadMaxima(){
-		return 150
-	}
-	method peso(){
-		return 1300
-	}
+	method capacidad(){return 4}
+	method velocidadMaxima(){return 150}
+	method peso(){return 1300}
+	
+	method pasoPor(posicion){}
 }
 class RenaultKwid {
 	var property tanqueAdicional

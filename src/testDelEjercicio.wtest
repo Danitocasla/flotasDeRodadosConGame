@@ -83,3 +83,37 @@ test "test de pedidos3"{
 	pedido.acelerar()
 	assert.notThat(pedido.autoSatisfacePedido(cachito))
 }
+
+test "test etapa 3"{
+	const deportes = new Dependencia(cantEmpleados=45)
+	const cachito = new ChevroletCorsa(color=rojo)
+	const corsaAzul = new ChevroletCorsa(color=azul)
+	const corsaVerde = new ChevroletCorsa(color=verde)
+	const kwid1 = new RenaultKwid(tanqueAdicional=true)
+	const autoEspecial = new AutosEspeciales(
+		capacidad=5, velocidadMaxima=160, peso=1200, color=beige
+	)
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(corsaAzul)
+	deportes.agregarAFlota(corsaVerde)
+	deportes.agregarAFlota(kwid1)
+	deportes.agregarAFlota(autoEspecial)
+	const pedido1 = new Pedidos(
+		distancia=960, tiempoMax=8,cantPasajeros=4
+	)
+	pedido1.agregarColorIncompatible(azul)
+	pedido1.agregarColorIncompatible(beige)
+	pedido1.agregarColorIncompatible(rojo)
+	const pedido2 = new Pedidos(
+		distancia=960, tiempoMax=8,cantPasajeros=4
+	)
+	pedido2.agregarColorIncompatible(blanco)
+	pedido2.agregarColorIncompatible(rojo)
+	deportes.agregarPedido(pedido1)
+	deportes.agregarPedido(pedido2)
+	
+	assert.equals(8, deportes.totalPasajerosPedidos())
+	assert.notThat(deportes.todosPedidosColorIncomp(azul))
+	assert.that(deportes.todosPedidosColorIncomp(rojo))
+}
+

@@ -55,13 +55,12 @@ class Dependencia {
 		return pedidosReg.sum({ped=>ped.cantPasajeros()})
 	}
 	method pedidosNoSatisfechos(){
-		return flotaDeRodados.filter({
-			rod=> not pedidosReg.any({
-				ped=>ped.autoSatisfacePedido(rod)
-			})
-		})
+		//metodo pendiente por ahora
 	}
 	method todosPedidosColorIncomp(color){
 		return pedidosReg.all({ped=>ped.tieneColorIncompatible(color)})
+	}
+	method relajarTodosLosPedidos(){
+		pedidosReg.forEach({ped=>ped.relajar()})
 	}
 }
