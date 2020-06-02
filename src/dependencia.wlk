@@ -7,7 +7,7 @@ class Dependencia {
 	
 	var property flotaDeRodados = []
 	var property cantEmpleados
-	var property pedidos = []
+	var property pedidosReg = []
 	
 	method agregarAFlota(rodado){
 		flotaDeRodados.add(rodado)
@@ -46,9 +46,14 @@ class Dependencia {
 		return cantEmpleados>=40 and flotaDeRodados.size()>=5
 	}
 	method agregarPedido(unPedido){
-		pedidos.add(unPedido)
+		pedidosReg.add(unPedido)
 	}
 	method quitarPedido(unPedido){
-		pedidos.remove(unPedido)
+		pedidosReg.remove(unPedido)
 	}
+	method totalPasajerosPedidos(){
+		return pedidosReg.sum({ped=>ped.cantPasajeros()})
+	}
+	method pedidosNoSatisfechos(){}
+	method todosPedidosColorIncomp(color){}
 }
