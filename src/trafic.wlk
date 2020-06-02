@@ -1,3 +1,5 @@
+import colores.*
+
 object trafic {
 	var interior
 	var motor
@@ -33,4 +35,3 @@ object bataton{
 	method velocidadMaxima(){return 80}
 	method peso(){return 500}
 }
-object blanco{}

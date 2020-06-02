@@ -1,14 +1,12 @@
 import rodados.*
 import trafic.*
+import colores.*
+
 class Dependencia {
 	
 	var flotaDeRodados = []
-	var cantEmpleados
+	var property cantEmpleados
 	
-	method empleados(){return cantEmpleados}
-	method setCantEmpleados(cantidad){
-		cantEmpleados = cantidad
-	}
 	method agregarAFlota(rodado){
 		flotaDeRodados.add(rodado)
 	}
@@ -36,12 +34,10 @@ class Dependencia {
 			rod => rod.velocidadMaxima()
 		}).color()
 	}
-	// agrogo correcciones de código según clase
 	method capacidadTotal(){
 		return flotaDeRodados.sum({rod => rod.capacidad()})
 	}
 	method capacidadFaltante(){
-		// corregido en clase
 		return (cantEmpleados - self.capacidadTotal()).max(0)
 	}
 	method esGrande(){

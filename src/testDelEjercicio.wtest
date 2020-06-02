@@ -1,32 +1,22 @@
 import trafic.*
 import dependencia.*
 import rodados.*
+import colores.*
 
 test "test dependencias" {
-	const deportes = new Dependencia()
-	const cultura = new Dependencia()
-	deportes.setCantEmpleados(45)
-	cultura.setCantEmpleados(31)
-	
-	const cachito = new ChevroletCorsa()
-	cachito.setColor(rojo)
-	const corsaAzul = new ChevroletCorsa()
-	corsaAzul.setColor(azul)
-	const corsaVerde = new ChevroletCorsa()
-	corsaVerde.setColor(verde)
-	const kwid1 = new RenaultKwid()
-	kwid1.setTanqueAdicional(true)
-	const autoEspecial = new AutosEspeciales()
-	autoEspecial.setCapacidad(5)
-	autoEspecial.setVelocidad(160)
-	autoEspecial.setPeso(1200)
-	autoEspecial.setColor(beige)
-	const kwid2 = new RenaultKwid()
-	kwid2.setTanqueAdicional(true)
-	const kwid3 = new RenaultKwid()
-	kwid3.setTanqueAdicional(true)
-	const kwid4 = new RenaultKwid()
-	kwid4.setTanqueAdicional(false)
+	const deportes = new Dependencia(cantEmpleados=45)
+	const cultura = new Dependencia(cantEmpleados=31)
+		
+	const cachito = new ChevroletCorsa(color=rojo)
+	const corsaAzul = new ChevroletCorsa(color=azul)
+	const corsaVerde = new ChevroletCorsa(color=verde)
+	const kwid1 = new RenaultKwid(tanqueAdicional=true)
+	const autoEspecial = new AutosEspeciales(
+		capacidad=5, velocidadMaxima=160, peso=1200, color=beige
+	)
+	const kwid2 = new RenaultKwid(tanqueAdicional=true)
+	const kwid3 = new RenaultKwid(tanqueAdicional=true)
+	const kwid4 = new RenaultKwid(tanqueAdicional=false)
 	trafic.setMotor(bataton)
 	trafic.setInterior(popular)
 	

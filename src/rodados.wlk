@@ -1,7 +1,7 @@
-import trafic.blanco
+import colores.*
 
 class ChevroletCorsa {
-	var color
+	var property color
 
 	method capacidad(){
 		return 4
@@ -9,22 +9,13 @@ class ChevroletCorsa {
 	method velocidadMaxima(){
 		return 150
 	}
-	method color(){
-		return color
-	}
-	method setColor(colorStr){
-		color = colorStr
-	}
 	method peso(){
 		return 1300
 	}
 }
 class RenaultKwid {
-	var tanqueAdicional
+	var property tanqueAdicional
 	
-	method setTanqueAdicional(condicion){
-		tanqueAdicional = condicion
-	}
 	method capacidad(){
 		return if(tanqueAdicional){3} else {4}
 	}
@@ -37,28 +28,8 @@ class RenaultKwid {
 	}
 }
 class AutosEspeciales {
-	var capacidad
-	var velocidadMaxima
-	var color
-	var peso
-	method capacidad(){return capacidad}
-	method velocidadMaxima(){return velocidadMaxima}
-	method color(){return color}
-	method peso(){return peso}
-	method setCapacidad(nuevaCapacidad){
-		capacidad = nuevaCapacidad
-	}
-	method setVelocidad(nuevaVelocidad){
-		velocidadMaxima = nuevaVelocidad
-	}
-	method setColor(nuevoColor){
-		color = nuevoColor
-	}
-	method setPeso(nuevoPeso){
-		peso = nuevoPeso
-	}
+	var property capacidad
+	var property velocidadMaxima
+	var property color
+	var property peso
 }
-object rojo{}
-object azul{}
-object beige{}
-object verde{}
