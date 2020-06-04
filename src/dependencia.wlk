@@ -56,10 +56,11 @@ class Dependencia {
 	}
 	method pedidosNoSatisfechos(){
 		return pedidosReg.filter({
-			ped=> not flotaDeRodados.any({
-				rod=> ped.autoSatisfacePedido(rod)
-			})
+			ped=> not self.puedeSatisfacer(ped)
 		})
+	}
+	method puedeSatisfacer(pedido){
+		flotaDeRodados.any({rod=> pedido.autoSatisfacePedido(rod)})
 	}
 	method todosPedidosColorIncomp(color){
 		return pedidosReg.all({ped=>ped.tieneColorIncompatible(color)})
