@@ -56,6 +56,11 @@ class Dependencia {
 	}
 	method pedidosNoSatisfechos(){
 		//metodo pendiente por ahora
+		return pedidosReg.filter({
+			ped=> not flotaDeRodados.any({
+				rod=> ped.autoSatisfacePedido(rod)
+			})
+		})
 	}
 	method todosPedidosColorIncomp(color){
 		return pedidosReg.all({ped=>ped.tieneColorIncompatible(color)})

@@ -104,6 +104,7 @@ test "test etapa 3"{
 	pedido1.agregarColorIncompatible(azul)
 	pedido1.agregarColorIncompatible(beige)
 	pedido1.agregarColorIncompatible(rojo)
+	pedido1.agregarColorIncompatible(verde)
 	const pedido2 = new Pedidos(
 		distancia=960, tiempoMax=8,cantPasajeros=4
 	)
@@ -115,5 +116,7 @@ test "test etapa 3"{
 	assert.equals(8, deportes.totalPasajerosPedidos())
 	assert.notThat(deportes.todosPedidosColorIncomp(azul))
 	assert.that(deportes.todosPedidosColorIncomp(rojo))
+	assert.notThat(pedido1.autoSatisfacePedido(cachito))
+	assert.equals(#{pedido1}, deportes.pedidosNoSatisfechos().asSet())
 }
 

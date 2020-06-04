@@ -3,8 +3,8 @@ import wollok.game.*
 
 class ChevroletCorsa {
 	var property color
-	var property position
-	var property image
+	var property position = new Position(x=0,y=0)
+	var property image = rojo.image()
 
 	method capacidad(){return 4}
 	method velocidadMaxima(){return 150}

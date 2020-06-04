@@ -1,7 +1,16 @@
 import wollok.game.*
+import rodados.*
+import colores.*
 
 program corsasEnElGame {
 	// hacer las inicializaciones necesarias 
+	game.title("Rodados Game")
+	game.width(15)
+	game.height(15)
+	
+	var cachito = new ChevroletCorsa(color=rojo)
+	game.addVisual(cachito)
+	
 	
 	game.start()
 }

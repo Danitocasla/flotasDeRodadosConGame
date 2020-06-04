@@ -1,4 +1,4 @@
-object rojo{}
+object rojo{method image() { return "autoRojo.png" }}
 object azul{}
 object beige{}
 object verde{}
