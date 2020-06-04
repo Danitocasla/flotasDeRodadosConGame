@@ -11,6 +11,11 @@ program corsasEnElGame {
 	var cachito = new ChevroletCorsa(color=rojo)
 	game.addVisual(cachito)
 	
+	keyboard.up().onPressDo({cachito.moveUp()})
+	keyboard.down().onPressDo({cachito.moveDown()})
+	keyboard.left().onPressDo({cachito.moveLeft()})
+	keyboard.right().onPressDo({cachito.moveRight()})
+	
 	
 	game.start()
 }

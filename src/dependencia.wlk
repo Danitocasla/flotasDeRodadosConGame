@@ -55,7 +55,6 @@ class Dependencia {
 		return pedidosReg.sum({ped=>ped.cantPasajeros()})
 	}
 	method pedidosNoSatisfechos(){
-		//metodo pendiente por ahora
 		return pedidosReg.filter({
 			ped=> not flotaDeRodados.any({
 				rod=> ped.autoSatisfacePedido(rod)
