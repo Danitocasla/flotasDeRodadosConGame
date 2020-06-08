@@ -1,21 +1,49 @@
 import wollok.game.*
 import rodados.*
 import colores.*
+import paredes.*
+
 
 program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
+	// CONFIG
 	game.title("Rodados Game")
 	game.width(15)
 	game.height(15)
 	
-	var cachito = new ChevroletCorsa(color=rojo)
-	game.addVisual(cachito)
+	//INSTANCIAS
+	var auto1 = new ChevroletCorsa(color=rojo,image=rojo.image())
+	var auto2 = new ChevroletCorsa(color=verde,image=verde.image())
+	var auto3 = new ChevroletCorsa(color=azul, image=azul.image())
+	var autoActivo = auto1
+	var paredFuerte1 = new Pared(resistencia = 2, position = game.at(2,2))
+	var paredFuerte2 = new Pared(resistencia = 2, position = game.at(2,1))
+	var paredFuerte3 = new Pared(resistencia = 2, position = game.at(2,0))
+		
+	// VISUALS
 	
-	keyboard.up().onPressDo({cachito.moveUp()})
-	keyboard.down().onPressDo({cachito.moveDown()})
-	keyboard.left().onPressDo({cachito.moveLeft()})
-	keyboard.right().onPressDo({cachito.moveRight()})
+	game.addVisual(auto1)
+	game.addVisual(auto2)
+	game.addVisual(auto3)
+
+	game.addVisual(paredFuerte1)
+	game.addVisual(paredFuerte2)
+	game.addVisual(paredFuerte3)
 	
+
+	//KEYBOARDS
+	keyboard.num1().onPressDo({autoActivo=auto1})
+	keyboard.num2().onPressDo({autoActivo=auto2})
+	keyboard.num3().onPressDo({autoActivo=auto3})
+
+	
+	keyboard.a().onPressDo({autoActivo.cambiarColorImage(azul)})
+	keyboard.v().onPressDo({autoActivo.cambiarColorImage(verde)})
+	keyboard.r().onPressDo({autoActivo.cambiarColorImage(rojo)})
+	keyboard.up().onPressDo{autoActivo.moveUp()}
+	keyboard.down().onPressDo{autoActivo.moveDown()}
+	keyboard.left().onPressDo{autoActivo.moveLeft()}
+	keyboard.right().onPressDo{autoActivo.moveRight()}
 	
 	game.start()
+	
 }

@@ -27,12 +27,20 @@ class ChevroletCorsa {
 		self.position(self.position().right(1))
 		posiciones.add(self.position())
 	}
-	
 	method pasoPor(posicion){
-		posiciones.any({pos=>pos==posicion})
+		return posiciones.any({pos=>pos==posicion})
 	}
-	method pasoPorFila(numero){}
-	method recorrioFilas(lista_de_numeros){}
+	method pasoPorFila(numero){
+		return posiciones.any({pos=>pos.x()==numero})
+	}
+	method recorrioFilas(lista_de_numeros){
+		return lista_de_numeros.all({num=> self.pasoPorFila(num)})
+	}
+	
+	method cambiarColorImage(colorImage){
+		image = colorImage.image()
+	}
+			
 }
 class RenaultKwid {
 	var property tanqueAdicional

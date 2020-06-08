@@ -1,5 +1,5 @@
 object rojo{method image() { return "autitorojo.png" }}
-object azul{}
+object azul{method image() { return "autitoazul.png" }}
 object beige{}
-object verde{}
+object verde{method image() { return "autitoaverde.png" }}
 object blanco{}
