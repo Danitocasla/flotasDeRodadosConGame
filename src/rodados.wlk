@@ -3,7 +3,7 @@ import wollok.game.*
 
 class ChevroletCorsa {
 	var property color
-	var property position = game.at(0, 0)
+	var property position = game.origin()
 	var property image = rojo.image()
 	var property posiciones = []
 

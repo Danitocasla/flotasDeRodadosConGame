@@ -10,4 +10,13 @@ class Pared {
 	method choque(){
 		resistencia -= 1
 	}
+	method siguePared(visual){
+		if(resistencia<=0){
+			game.removeVisual(visual)
+		}
+		else if(resistencia.between(1, 2)){
+			image = self.muroDevil()
+		}
+		else { image = self.muroFuerte()}
+	}
 }

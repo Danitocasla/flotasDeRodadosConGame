@@ -15,9 +15,9 @@ program corsasEnElGame {
 	var auto2 = new ChevroletCorsa(color=verde,image=verde.image())
 	var auto3 = new ChevroletCorsa(color=azul, image=azul.image())
 	var autoActivo = auto1
-	var paredFuerte1 = new Pared(resistencia = 2, position = game.at(2,2))
-	var paredFuerte2 = new Pared(resistencia = 2, position = game.at(2,1))
-	var paredFuerte3 = new Pared(resistencia = 2, position = game.at(2,0))
+	var paredFuerte1 = new Pared(resistencia = 3, position = game.at(2,2))
+	var paredFuerte2 = new Pared(resistencia = 3, position = game.at(2,1))
+	var paredFuerte3 = new Pared(resistencia = 3, position = game.at(2,0))
 		
 	// VISUALS
 	
@@ -43,6 +43,7 @@ program corsasEnElGame {
 	keyboard.down().onPressDo{autoActivo.moveDown()}
 	keyboard.left().onPressDo{autoActivo.moveLeft()}
 	keyboard.right().onPressDo{autoActivo.moveRight()}
+	
 	
 	game.start()
 	
